@@ -4,10 +4,7 @@ __pycache__/
 *$py.class
 
 # examples
-./pyxel_examples
-
-# Virtual environment
-./venv
+pyxel_examples/
 
 # C extensions
 *.so
