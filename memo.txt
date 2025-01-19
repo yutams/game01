@@ -1,3 +1,0 @@
-pyxel package app_dir app_dir\sample.py
-pyxel app2html app_dir.pyxapp
-rename app_dir.html index.html
