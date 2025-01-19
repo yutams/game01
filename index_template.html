@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script>
+async function main() {
+// Pyodideを初期化
+const pyodide = await loadPyodide();
+await pyodide.loadPackage("micropip");
+
+// .whlファイルをPyodideにロード
+await pyodide.runPythonAsync(`
+    import micropip
+`);
+launchPyxel({ command: "play", name: "{{ name }}", packages: "micropip", gamepad: "enabled", base64: "{{ base64 }}" });
+}
+main();
+</script>

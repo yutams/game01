@@ -41,6 +41,9 @@ if not !ERRORLEVEL!==0 (
     exit /b 1
 )
 
+:: テンプレートを反映
+python reflect_template.py
+
 :: 完了メッセージ
 echo 処理が完了しました。
 exit /b 0
