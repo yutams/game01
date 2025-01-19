@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# examples
+./pyxel_examples
+
+# Virtual environment
+./venv
+
 # C extensions
 *.so
 
