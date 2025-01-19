@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.27.1/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
 <script>
 async function main() {
 // Pyodideを初期化
 const pyodide = await loadPyodide();
+await pyodide.loadPackage("micropip");
 
 // .whlファイルをPyodideにロード
 await pyodide.runPythonAsync(`
     import micropip
     await micropip.install("https://yutams.github.io/game01/pymunk-6.11.0-cp312-cp312-pyodide_2024_0_wasm32.whl")
+    import pymunk
 `);
+launchPyxel({ command: "play", name: "shot_bullet.pyxapp", packages: "micropip", gamepad: "enabled", base64: "UEsDBBQAAAAIAHK/M1osYEvPCQAAAAcAAAAiAAAAc2hvdF9idWxsZXQvLnB5eGFwcF9zdGFydHVwX3NjcmlwdMtNzMzTK6gEAFBLAwQUAAAACABvvzNatodBkPEDAAC8DAAAEwAAAHNob3RfYnVsbGV0L21haW4ucHmtV21v2zYQ/h4g/4Fwv0iZpkpOnG0BMsBps30otnl1N2AYBoKW6JgILakUvdj79bsjJZuklKZ7sWOH4t09vDs+d6TFtqmVJs1hz+X5meiftrvq8fwM34VkbUvmTXNzfkbgVfI1oVRUQlMatVyuk049Ieumvb3O4k4RXyhPrZjcHmE9KRiBCL5xsV5i3ElxkWg6u06I+UJ4+CRECy357eRXrrQomCRLzYpH8iT0hizQcBKHSLJmZTRpN7Wmq52UXINTe8VbV9N4UyjONKdPtZJlNIBRu8qEnO6aEtQSa1Mq9hT33mN6PBBUGaSkbVjBIWwnP+kS56LQIaOZPij2p9AHsMgS8k2WjSq1kvOGarHlVG8guE0tS7RIL93UvsJ0Qd6IFBVvHSAzS80sWP1+kgQbmS75w5ZXOnKXtsarujwkJMrByWmWxTCcXh3HeZz8B8zppQOK49kA84/TcF0rEx8RlRfYje8BzqVrJQot6qpP1UhmWVlGFy5OPMho8chLsqr3XkoNwoY1NqOBf3t0TrHqgUezOHAM5YeTPM9CBQMv/kIO5dlQtMWaRVE6Jqwx1QH77CSFhSHj+wgBINO4RGIWiuMh0ErWxaPZoADsDqY6CIv7SeO0qVvR7UCeZeQLSM0F7HXSPR3gyXgC4yzNn8UymQ48WdTy0Bc1xnVa9TOjM6DPcsTf6SNX3FUcmJFFHIqkrGl41RuHBq/InWlcIb1sO+v5depBtkMNu4/mDejOEPD9riLbndSikdwIWsO7ba3wka1wVoACw8h9CFoif3Ly+tTDXxuBT3F6ojAKQxJ7xc6bqEP2ikusu9670lUT2eG7+9/ocjF/cx8TWGQg/n7+w/1i/jand798+PDTj3QernusjqA4FGYmUH2hVgqhCsk7rgNjFdAK/mUhoew2/ZtacSzdQjFNNr+ejWuPlcIb66qD96K7L5M/JL4L7oLEI2YddY+899V9A7iY7GRr2t0so1m4c26SAE4eaGdAmaZQT0zSphZwvkTdPMbsxP4y334OSWRFH3dwRfksgAELR+8bpwLGW8WgfC1cIdsoC46gt6DepaH1i9CjBJ6HTu4Dl/YJgX27oJBmjwGrla8HFS1xL770tUz2jeiC5F9n0BIu0/wKvVOsFAwI9C2E9qA4H0vlSurIOpCbUjL9335UDWcvvzXYo3H7566J2jkS+qBtn/1EzE7Hfz5kV+n/ijj7pxG3o3e47rILk/0dDL6u+tFXw2sxavY3K/iy9yqrOVjyHT8Qvm8kq4IDwWJpvtfRVULgb2Ka8w1Zwn27O7YmY8v3JvkUbOY4f0Pe8/aoje/vFkvI+jXUO/wEifpfGjAL8r8BUEsBAhQAFAAAAAgAcr8zWixgS88JAAAABwAAACIAAAAAAAAAAAAAALaBAAAAAHNob3RfYnVsbGV0Ly5weXhhcHBfc3RhcnR1cF9zY3JpcHRQSwECFAAUAAAACABvvzNatodBkPEDAAC8DAAAEwAAAAAAAAAAAAAAtoFJAAAAc2hvdF9idWxsZXQvbWFpbi5weVBLBQYAAAAAAgACAJEAAABrBAAAAAA=" });
+}
+main();
+</script>

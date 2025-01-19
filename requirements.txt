@@ -1,1 +1,5 @@
 pyxel==2.3.0
+pymunk-6.11.0
+micropip-0.8.0
+ asyncio-3.4.3
+ 
