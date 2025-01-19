@@ -188,16 +188,7 @@ class Blast:
 
 class App:
     def __init__(self):
-        pyxel.init(120, 160, title="Pyxel Shooter")
-
-        # 仮想コントローラーの位置を設定
-        pyxel.controller(
-            True,  # 仮想コントローラーを表示
-            x=20,  # コントローラー左上のx座標
-            y=80,  # コントローラー左上のy座標
-            scale=1.5,
-        )  # コントローラーの拡大率
-
+        pyxel.init(120, 150, title="Pyxel Shooter")
         pyxel.images[0].set(
             0,
             0,
