@@ -188,7 +188,7 @@ class Blast:
 
 class App:
     def __init__(self):
-        pyxel.init(120, 150, title="Pyxel Shooter")
+        pyxel.init(120, 140, title="Pyxel Shooter")
         pyxel.images[0].set(
             0,
             0,
